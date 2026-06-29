@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Calculator Palette -->
+    <color name="bg_color">#17171C</color>
+    <color name="display_text">#FFFFFF</color>
+    <color name="btn_number">#2E2F38</color>
+    <color name="btn_operator">#4B5EFC</color>
+    <color name="btn_function">#4E505F</color>
+    <color name="btn_text_light">#FFFFFF</color>
+    <color name="btn_text_dark">#000000</color>
+</resources>
