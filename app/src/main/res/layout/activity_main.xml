@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:fontFamily="sans-serif-light"
         android:gravity="bottom|end"
         android:maxLines="2"
         android:padding="10dp"
         android:text="0"
         android:textColor="@color/display_text"
-        android:textSize="72sp"
-        android:fontFamily="sans-serif-light" />
+        android:textSize="72sp" />
 
     <GridLayout
         android:layout_width="match_parent"

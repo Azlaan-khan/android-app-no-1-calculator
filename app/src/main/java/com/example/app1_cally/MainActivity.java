@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onNumberClick(String number) {
-        if (isNewOperation || tvDisplay.getText().toString().equals("0") || tvDisplay.getText().toString().equals("Error")) {
+        String currentText = tvDisplay.getText().toString();
+        if (isNewOperation || currentText.equals("0") || currentText.equals("Error")) {
             tvDisplay.setText(number);
             isNewOperation = false;
         } else {
@@ -57,24 +58,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onDotClick() {
+        String currentText = tvDisplay.getText().toString();
         if (isNewOperation) {
             tvDisplay.setText("0.");
             isNewOperation = false;
-        } else if (!tvDisplay.getText().toString().contains(".")) {
-            tvDisplay.append(".");
+        } else {
+            String[] parts = currentText.split(" ");
+            String lastPart = parts[parts.length - 1];
+            if (!lastPart.contains(".")) {
+                if (lastPart.isEmpty()) tvDisplay.append("0.");
+                else tvDisplay.append(".");
+            }
         }
     }
 
     private void onOperatorClick(String operator) {
+        String currentText = tvDisplay.getText().toString();
+        if (currentText.equals("Error")) return;
+
         try {
-            String currentText = tvDisplay.getText().toString();
-            if (currentText.equals("Error")) return;
+            String[] parts = currentText.split(" ");
+            if (parts.length == 3) {
+                calculateResult();
+                currentText = tvDisplay.getText().toString();
+            }
 
             firstValue = Double.parseDouble(currentText);
             currentOperator = operator;
-            isNewOperation = true;
+            tvDisplay.setText(decimalFormat.format(firstValue) + " " + operator + " ");
+            isNewOperation = false;
         } catch (NumberFormatException e) {
-            tvDisplay.setText("Error");
+            if (currentText.contains(" ")) {
+                currentOperator = operator;
+                String base = currentText.substring(0, currentText.indexOf(" "));
+                tvDisplay.setText(base + " " + operator + " ");
+            }
         }
     }
 
@@ -82,10 +100,23 @@ public class MainActivity extends AppCompatActivity {
         try {
             String currentText = tvDisplay.getText().toString();
             if (currentText.equals("Error") || currentText.equals("0")) return;
+
+            String[] parts = currentText.split(" ");
+            String lastPart = parts[parts.length - 1];
             
-            double value = Double.parseDouble(currentText) / 100;
-            tvDisplay.setText(decimalFormat.format(value));
-            isNewOperation = true;
+            if (lastPart.isEmpty()) return; // Nothing to apply percent to
+
+            double value = Double.parseDouble(lastPart) / 100;
+            String formattedValue = decimalFormat.format(value);
+            
+            if (parts.length == 1) {
+                tvDisplay.setText(formattedValue);
+                isNewOperation = true;
+            } else {
+                // Replace the last part with the percentage value
+                String base = currentText.substring(0, currentText.lastIndexOf(" ") + 1);
+                tvDisplay.setText(base + formattedValue);
+            }
         } catch (NumberFormatException e) {
             tvDisplay.setText("Error");
         }
@@ -94,8 +125,12 @@ public class MainActivity extends AppCompatActivity {
     private void calculateResult() {
         if (Double.isNaN(firstValue) || currentOperator.isEmpty()) return;
 
+        String currentText = tvDisplay.getText().toString();
         try {
-            double secondValue = Double.parseDouble(tvDisplay.getText().toString());
+            String[] parts = currentText.split(" ");
+            if (parts.length < 3) return;
+
+            double secondValue = Double.parseDouble(parts[2]);
             double result = 0;
 
             switch (currentOperator) {
@@ -119,14 +154,24 @@ public class MainActivity extends AppCompatActivity {
             firstValue = Double.NaN;
             currentOperator = "";
             isNewOperation = true;
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             tvDisplay.setText("Error");
         }
     }
 
     private void deleteLastCharacter() {
         String currentText = tvDisplay.getText().toString();
-        if (currentText.length() > 0 && !currentText.equals("0") && !currentText.equals("Error")) {
+        if (currentText.isEmpty() || currentText.equals("0") || currentText.equals("Error")) {
+            tvDisplay.setText("0");
+            return;
+        }
+
+        if (currentText.endsWith(" ")) {
+            // Remove " + " (3 characters)
+            tvDisplay.setText(currentText.substring(0, currentText.length() - 3));
+            currentOperator = "";
+            firstValue = Double.NaN;
+        } else {
             if (currentText.length() == 1) {
                 tvDisplay.setText("0");
             } else {
