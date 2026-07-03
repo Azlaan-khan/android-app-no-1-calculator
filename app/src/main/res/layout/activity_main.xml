@@ -16,7 +16,7 @@
         android:gravity="bottom|end"
         android:maxLines="2"
         android:padding="10dp"
-        android:text="0"
+        android:text="@string/btn_0"
         android:textColor="@color/display_text"
         android:textSize="72sp" />
 
@@ -34,7 +34,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="C"
+            android:text="@string/btn_clear"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_function"
             app:cornerRadius="20dp" />
@@ -46,7 +46,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="⌫"
+            android:text="@string/btn_delete"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_function"
             app:cornerRadius="20dp" />
@@ -58,7 +58,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="%"
+            android:text="@string/btn_percent"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_function"
             app:cornerRadius="20dp" />
@@ -69,7 +69,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="÷"
+            android:text="@string/btn_divide"
             android:textSize="28sp"
             app:backgroundTint="@color/btn_operator"
             app:cornerRadius="20dp" />
@@ -81,7 +81,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="7"
+            android:text="@string/btn_7"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -92,7 +92,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="8"
+            android:text="@string/btn_8"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -103,7 +103,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="9"
+            android:text="@string/btn_9"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -114,7 +114,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="×"
+            android:text="@string/btn_multiply"
             android:textSize="28sp"
             app:backgroundTint="@color/btn_operator"
             app:cornerRadius="20dp" />
@@ -126,7 +126,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="4"
+            android:text="@string/btn_4"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -137,7 +137,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="5"
+            android:text="@string/btn_5"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -148,7 +148,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="6"
+            android:text="@string/btn_6"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -159,7 +159,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="−"
+            android:text="@string/btn_subtract"
             android:textSize="28sp"
             app:backgroundTint="@color/btn_operator"
             app:cornerRadius="20dp" />
@@ -171,7 +171,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="1"
+            android:text="@string/btn_1"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -182,7 +182,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="2"
+            android:text="@string/btn_2"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -193,7 +193,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="3"
+            android:text="@string/btn_3"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -204,7 +204,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="+"
+            android:text="@string/btn_add"
             android:textSize="28sp"
             app:backgroundTint="@color/btn_operator"
             app:cornerRadius="20dp" />
@@ -216,7 +216,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="."
+            android:text="@string/btn_dot"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -227,7 +227,7 @@
             android:layout_height="80dp"
             android:layout_columnWeight="1"
             android:layout_margin="6dp"
-            android:text="0"
+            android:text="@string/btn_0"
             android:textSize="24sp"
             app:backgroundTint="@color/btn_number"
             app:cornerRadius="20dp" />
@@ -239,7 +239,7 @@
             android:layout_columnSpan="2"
             android:layout_columnWeight="2"
             android:layout_margin="6dp"
-            android:text="="
+            android:text="@string/btn_equals"
             android:textSize="28sp"
             app:backgroundTint="@color/btn_operator"
             app:cornerRadius="20dp" />
